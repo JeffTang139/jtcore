@@ -1,0 +1,24 @@
+create or replace package dna is
+function year(ts timestamp) return number;
+function quarter(ts timestamp) return number;
+function month(ts timestamp) return number;
+function weekofyear(ts timestamp) return number;
+function weekofyear_iso(ts timestamp) return number;
+function dayofyear(ts timestamp) return number;
+function dayofmonth(ts timestamp) return number;
+function dayofweek(ts timestamp) return number;
+function dayofweek_iso(ts timestamp) return number;
+function hour(ts timestamp) return number;
+function minute(ts timestamp) return number;
+function second(ts timestamp) return number;
+function millisecond(ts timestamp) return number;
+function yeardiff(st timestamp, ed timestamp) return number;
+function quarterdiff(st timestamp, ed timestamp) return number;
+function monthdiff(st timestamp, ed timestamp) return number;
+function weekdiff(st timestamp, ed timestamp) return number;
+function weekdiff_iso(st timestamp, ed timestamp) return number;
+function daydiff(st timestamp, ed timestamp) return number;
+function isleapyear(ts timestamp) return number;
+function isleapmonth(ts timestamp) return number;
+function isleapday(ts timestamp) return number;
+end dna;

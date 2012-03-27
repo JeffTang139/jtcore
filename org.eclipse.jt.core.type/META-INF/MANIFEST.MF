@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 11.2-b01 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-Name: Type
+Bundle-SymbolicName: org.eclipse.jt.core.type
+Bundle-Version: 2.0.0
+Bundle-Vendor: jt
+Import-Package: org.osgi.framework
+Export-Package: org.eclipse.jt.core.type
+

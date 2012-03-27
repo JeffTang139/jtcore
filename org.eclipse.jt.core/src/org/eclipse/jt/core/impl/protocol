@@ -1,0 +1,135 @@
+stream:
+    magic version contents
+    
+  contents:
+      content
+      contents content
+    
+    content:
+        object
+        blockdata
+
+      object:
+          newStructSummary
+          newStructDefine
+          newObject
+          newString
+          newGUID
+          newEnum
+          newClass
+          newArray
+          prevObject
+          nullReference
+          exception
+          TC_RESET
+          
+        newStructSummary:
+            TC_STRUCTSUM newHandle structSummary
+          structSummary:
+              defineName VUID isDynamic {defineAuthor}  // defineAuthor is conditional optional
+            defineName:
+                (utf)
+            VUID:
+                (byte[16])
+            isDynamic:
+                (boolean)
+            defineAuthor:
+                (utf)
+
+        newStructDefine:
+            TC_STRUCTDEF newHandle newStructSummary structFields
+          structFields:
+              (short)<count> structFieldDefine[count]
+            structFieldDefine:
+                fieldauthor fieldname isStateField isReadonly isKeepValid fieldType
+              fieldauthor:
+                  (utf)
+              fieldname:
+                  (utf)
+              fieldType:    ???
+                  typeString otherInfo
+                typeString:
+                    (utf)
+                otherInfo:
+                    XXX
+              is____:
+                  (boolean)
+
+        newObject:
+            TC_OBJECT structDesc newHandle structdata[]
+          structDesc:
+              prevObject
+              newStructDefine
+              newStructSummary
+          structdata:
+              values            // fields in order of StructDefine
+                                // The size and types are described by the StructDefine for the current object
+
+        newString:
+            TC_STRING (utf) newHandle 
+            TC_LONGSTRING (long-utf) newHandle
+            
+        newGUID:
+            TC_GUID byte[16] newHandle
+            
+        newEnum:
+            TC_ENUM class enumConstantName newHandle
+          class:
+              prevObject
+              newClass
+          enumConstantName:
+              (utf)
+              
+        newClass:
+            TC_CLASS className newHandle
+          className:
+              (utf)
+                
+        newArray:    ???
+            TC_ARRAY classDesc newHandle (int)<size> values[size]
+            
+        prevObject
+            TC_REFERENCE (int)handle
+ 
+        nullReference
+            TC_NULL
+            
+        exception:
+            TC_EXCEPTION reset (Throwable)object reset
+          reset:            // The set of known objects is discarded
+                            // so the objects of the exception do not
+                            // overlap with the previously sent objects 
+                            // or with objects that may be sent after 
+                            // the exception
+
+
+newHandle:       // The next number in sequence is assigned
+                 // to the object being serialized or deserialized 
+           
+            
+            
+            
+            
+magic:
+    STREAM_MAGIC
+
+version:
+    STREAM_VERSION
+            
+
+ 
+          
+          
+        
+
+ blockdata:
+  blockdatashort
+  blockdatalong
+ blockdatashort:
+  TC_BLOCKDATA (unsigned byte)<size> (byte)[size]
+ blockdatalong:
+  TC_BLOCKDATALONG (int)<size> (byte)[size]
+ endBlockData    :
+  TC_ENDBLOCKDATA
+
+

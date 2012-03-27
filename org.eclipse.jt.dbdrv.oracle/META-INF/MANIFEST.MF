@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 16.0-b06 (Sun Microsystems Inc.)
+Bundle-ManifestVersion: 2
+Bundle-Name: Oracle Plug-in
+Bundle-SymbolicName: org.eclipse.jt.dbdrv.oracle
+Bundle-Version: 1.0.0
+Bundle-Vendor: jt
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: .,ojdbc5.jar,orai18n.jar
+Export-Package: org.eclipse.jt.dbdrv.oracle
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dna>
+	<servlets>
+		<servlet path="/obf" class="org.eclipse.jt.core.impl.ObfuscateServlet"/>
+		<servlet path="/dna_core/ncl" class="org.eclipse.jt.core.impl.NetConnectionListener"/>
+		<servlet path="/*" init-order="0" class="org.eclipse.equinox.http.servlet.HttpServiceServlet"/>
+	</servlets>
+	<gathering>
+		<gatherer group="services" element="service" class="org.eclipse.jt.core.impl.PublishedServiceGatherer"/>
+		<gatherer group="tables" element="table" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="orms" element="orm" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="querys" element="query" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="commands" element="command" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="models" element="model" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="model-script-engines" element="engine" class="org.eclipse.jt.core.impl.PublishedModelScriptEngineGetherer"/>
+		<gatherer group="info-groups" element="info-group" class="org.eclipse.jt.core.impl.PublishedDeclaratorGatherer"/>
+		<gatherer group="info-groups-localization" element="info-group" class="org.eclipse.jt.core.impl.PublishedInfoGroupLGatherer"/>
+		<gatherer group="declare-scripts" element="script" class="org.eclipse.jt.core.impl.PublishedDeclareScriptGatherer"/>
+	</gathering>
+	<types>
+		<type struct="force" class="java.lang.StackTraceElement"/>
+		<type struct="force" class="java.net.InetAddress"/>
+		<type struct="force" class="java.net.Inet4Address"/>
+		<type struct="force" class="java.net.NetworkInterface"/>
+		<type struct="force" class="java.net.Inet6Address"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.NetTaskRequestImpl$RemoteTaskData"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.NetQueryRequestImpl$RemoteQueryData"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.NetNodeImpl$RemoteTypeQuery"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.NetNodeImpl$RemoteTypeQueryResult"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.SerializationEnumInfo"/>
+		<type struct="true" class="org.eclipse.jt.core.impl.SerializationStructInfo"/>
+		<type struct="false" class="org.eclipse.jt.core.impl.DOT_TreeNodeImpl$Mark"/>
+		<type struct="false" class="java.util.ArrayList" translator="org.eclipse.jt.core.impl.DOT_ArrayList"/>
+		<type struct="false" class="java.util.HashMap" translator="org.eclipse.jt.core.impl.DOT_HashMap"/>
+		<type struct="false" class="java.util.Hashtable" translator="org.eclipse.jt.core.impl.DOT_Hashtable"/>
+	</types>
+	<publish>
+		<model-script-engines>
+			<engine class="org.eclipse.jt.core.impl.ModelJavaScriptEngine"/>
+		</model-script-engines>
+		<services>
+			<service space="dna/core" class="org.eclipse.jt.core.impl.SystemService" />
+			<service space="dna/core" class="org.eclipse.jt.core.impl.TestService" />
+			<service space="dna/core" class="org.eclipse.jt.core.impl.ClusterSynService" />
+			<service space="dna/core" class="org.eclipse.jt.core.impl.RoleResourceService" />
+			<service space="dna/core" class="org.eclipse.jt.core.impl.UserResourceService" />
+			<service space="dna/core" class="org.eclipse.jt.core.impl.PM_Service" />
+		</services>
+		<tables>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreMetaData"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreSiteInfo"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthACL"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthAuthACL"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthRA"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthUOM"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthRole"/>
+			<table space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.TD_CoreAuthUser"/>
+		</tables>
+		<orms>
+			<orm space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.ORM_CoreAuthACL_ByActorAndOrg"/>
+			<orm space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.ORM_CoreAuthAuthACL_ByActorAndOrg"/>
+			<orm space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.ORM_CoreAuthRA_ByActor"/>
+			<orm space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.ORM_CoreAuthRA_ByRole"/>
+			<orm space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.ORM_CoreAuthUOM_OrderByActor"/>
+		</orms>
+		<querys/>
+		<commands>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthACL_ByActor"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthAuthACL_ByActor"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthUOM_ByActor"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthACL_OneRecord"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthAuthACL_OneRecord"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthUOM_OneRecord"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthRA_ByActor"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthRA_ByRole"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthACL_ByResCategory"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthACL_ByResource"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthACL_ByActorAndOrg"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthAuthACL_ByResCategory"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthAuthACL_ByResource"/>
+			<command space="dna/core" visibility="PROTECTED" class="org.eclipse.jt.core.impl.DD_CoreAuthAuthACL_ByActorAndOrg"/>
+		</commands>
+	</publish>
+</dna>

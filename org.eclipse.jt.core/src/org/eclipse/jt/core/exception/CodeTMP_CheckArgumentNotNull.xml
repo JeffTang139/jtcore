@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template 
+		autoinsert="true" 
+		context="java-statements" 
+		deleted="false" 
+		description="检查某个参数不可为空" 
+		enabled="true" 
+		name="checkArgNotNull">if (${arg:localVar(java.lang.Object)}==null){&#13;
+	throw new NullArgumentException("${arg}");&#13;
+}</template>
+	<template
+		autoinsert="true" 
+		context="java-statements"
+		deleted="false"
+		description="检查某个字符串参数不可为空"
+		enabled="true"
+		name="checkStrArgNotNull">if (${arg:localVar(java.lang.String)}==null || ${arg}.length()==0){&#13;
+	throw new NullArgumentException("${arg}");&#13;
+}</template>
+</templates>

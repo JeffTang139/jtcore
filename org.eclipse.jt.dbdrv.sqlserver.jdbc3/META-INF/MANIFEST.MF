@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.jt.dbdrv.sqlserver.jdbc3
+Bundle-Vendor: jt
+Ant-Version: Apache Ant 1.7.1
+Bundle-ClassPath: .,sqljdbc.jar
+Bundle-Version: 1.0.0
+Bundle-Name: sqlserver-jdbc3-drv
+Bundle-ManifestVersion: 2
+Created-By: 1.5.0_21-b01 (Sun Microsystems Inc.)
+Bundle-SymbolicName: org.eclipse.jt.dbdrv.sqlserver.jdbc3
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+

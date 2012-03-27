@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.jt.dbdrv.mysql
+Bundle-Vendor: jt
+Ant-Version: Apache Ant 1.7.1
+Bundle-ClassPath: .,mysql-connector-java-5.1.5-bin.jar
+Bundle-Version: 1.0.0
+Bundle-Name: Mysql Plug-in
+Bundle-ManifestVersion: 2
+Created-By: 1.5.0_21-b01 (Sun Microsystems Inc.)
+Bundle-SymbolicName: org.eclipse.jt.dbdrv.mysql
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+
